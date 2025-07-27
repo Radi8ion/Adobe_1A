@@ -41,3 +41,36 @@ docker build --platform linux/amd64 -t pdf-extractor:v1 .
 
 ▶️ Run the Container
 📌 On Windows PowerShell:
+```bash
+docker run --rm -v ${PWD}/input:/app/input -v ${PWD}/output:/app/output --network none pdf-extractor:v1
+```
+
+📌 On Windows CMD:
+```bash
+docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output --network none pdf-extractor:v1
+```
+
+📌 On Linux / macOS:
+```bash
+docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none pdf-extractor:v1
+```
+
+📦 Folder Structure
+```bash
+Challenge_1A/
+├─ input/         # Place your input PDFs here
+├─ output/        # JSON outputs will be generated here
+├─ extractor_enhanced.py
+├─ requirements.txt
+├─ Dockerfile
+└─ README.md
+```
+
+###⚡ Performance
+✅ Processes 50‑page PDFs in under 10 seconds
+✅ Works offline, CPU-only
+✅ Model size: < 200 MB
+✅ Handles multilingual headings and complex layouts
+
+
+
