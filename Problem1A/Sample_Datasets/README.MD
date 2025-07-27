@@ -19,6 +19,7 @@ This solution uses PyMuPDF to extract structured outlines from PDFs using statis
 ### Build:
 ```bash
 docker build --platform linux/amd64 -t pdf-extractor:v1 .
+```
 
 Run (On Windows PowerShell):
 ```bash
@@ -50,7 +51,7 @@ Challenge_1A/
 -  Processes 50‑page PDFs in under 10 seconds
 -  Works offline, CPU-only
 -  Model size: < 200 MB
-- ✅ Handles multilingual headings and complex layouts
+-  Handles multilingual headings and complex layouts
 
 
 
