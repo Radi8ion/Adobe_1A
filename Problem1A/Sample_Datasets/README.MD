@@ -39,7 +39,8 @@ Run this in your `Challenge_1A` folder:
 docker build --platform linux/amd64 -t pdf-extractor:v1 .
 ```
 
-###▶️ Run the Container
+##▶️ Run the Container
+
 ###📌 On Windows PowerShell:
 ```bash
 docker run --rm -v ${PWD}/input:/app/input -v ${PWD}/output:/app/output --network none pdf-extractor:v1
@@ -66,7 +67,7 @@ Challenge_1A/
 └─ README.md
 ```
 
-###⚡ Performance
+⚡ Performance
 - ✅ Processes 50‑page PDFs in under 10 seconds
 - ✅ Works offline, CPU-only
 - ✅ Model size: < 200 MB
