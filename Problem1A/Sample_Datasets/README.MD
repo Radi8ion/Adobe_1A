@@ -37,6 +37,7 @@ This solution extracts a structured outline (title and headings) from PDF docume
 Run this in your `Challenge_1A` folder:
 ```bash
 docker build --platform linux/amd64 -t pdf-extractor:v1 .
+```
 
 ▶️ Run the Container
 📌 On Windows PowerShell:
