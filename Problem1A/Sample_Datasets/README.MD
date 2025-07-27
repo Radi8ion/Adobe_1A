@@ -56,7 +56,6 @@ docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --networ
 
 ###
 📦 Folder Structure
-```bash
 Challenge_1A/
 ├─ input/         # Place your input PDFs here
 ├─ output/        # JSON outputs will be generated here
