@@ -33,7 +33,7 @@ docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output --network no
 
 Run (On Linux / macOS):
 ```bash
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none pdf-extractor:v1
+docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output --network none pdf-extractor:v1
 ```
 
  Folder Structure
