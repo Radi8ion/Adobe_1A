@@ -59,7 +59,7 @@ Run (On Linux / macOS):
 ```bash
 docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output --network none pdf-extractor:v1
 ```
- Folder Structure
+## Folder Structure
 ```bash
 Challenge_1A/
 ├─ input/         # Place your input PDFs here
