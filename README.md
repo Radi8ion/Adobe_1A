@@ -8,6 +8,15 @@ It produces a clean hierarchical JSON outline ready to be consumed by subsequent
 We use PyMuPDF to read PDF text along with style metadata (font sizes, positions, bold/italic info).
 Then, we apply statistical font analysis to detect headings and use multilingual regex patterns to recognize numbered sections and chapters.
 
+## Libraries Used
+- **PyMuPDF** – PDF parsing with font/position info
+- **numpy** – Statistical font analysis
+- **unicodedata** – Unicode normalization
+- **re** – Regex-based heading detection
+
+## Logic and Design
+Our model uses PyMuPDF to parse PDF documents and extract all text spans along with their font size, position, and style. We apply statistical analysis (via NumPy) to determine the most frequent font sizes, which helps in classifying heading levels (H1, H2, H3). To make the extraction robust across different languages, we employ multilingual regex patterns to detect structured headings like “1. Introduction”, “第1章”, etc. Finally, we remove duplicates and generate a clean hierarchical outline in JSON format.
+
 ### Key Algorithms:
 1. Scan the /app/input directory for all .pdf files.
 2. For each PDF:
@@ -19,12 +28,6 @@ Then, we apply statistical font analysis to detect headings and use multilingual
 5. Determine heading levels (H1, H2, H3) based on statistical and structural rules.
 6. Remove duplicates and refine the hierarchy for consistency.
 7. Output a JSON file per PDF with structured headings (text, level, page).
-
-## Libraries Used
-- **PyMuPDF** – PDF parsing with font/position info
-- **numpy** – Statistical font analysis
-- **unicodedata** – Unicode normalization
-- **re** – Regex-based heading detection
 
 ## Input PDFs
 ### **IMPORTANT**
@@ -43,7 +46,17 @@ Challenge_1A/
 ├─ output/        # output JSONs will be created here
 ...
 ```
+### Docker Installation (If Not Already Installed)
+This solution runs entirely in a Docker container. Please ensure Docker is installed and running on your machine before proceeding.
 
+## Install Docker:
+- Windows & macOS: Download Docker Desktop from https://www.docker.com/products/docker-desktop
+- Linux: Follow the official instructions here: https://docs.docker.com/engine/install/
+  
+After installation, verify using:
+```bash
+docker --version
+```
 
 ## How to Build and Run
 
