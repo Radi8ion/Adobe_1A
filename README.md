@@ -46,10 +46,15 @@ Challenge_1A/
 ├─ output/        # output JSONs will be created here
 ...
 ```
-### Docker Installation (If Not Already Installed)
+## Getting Started
+### 1. Clone the Repository
+```bash
+https://github.com/Radi8ion/Adobe_1A/tree/main
+```
+### 2. Docker Installation (If Not Already Installed)
 This solution runs entirely in a Docker container. Please ensure Docker is installed and running on your machine before proceeding.
 
-## Install Docker:
+#### Install Docker:
 - Windows & macOS: Download Docker Desktop from https://www.docker.com/products/docker-desktop
 - Linux: Follow the official instructions here: https://docs.docker.com/engine/install/
   
@@ -58,12 +63,17 @@ After installation, verify using:
 docker --version
 ```
 
-## How to Build and Run
+### 3. Place Input Files
+- Add your PDFs inside the input/ folder.
 
-### Build:
+### 4. Build the docker image
+
+#### Build:
 ```bash
 docker build --platform linux/amd64 -t pdf-extractor:v1 .
 ```
+### 5. Run the container
+
 Run (On Windows PowerShell):
 ```bash
 docker run --rm -v ${PWD}/input:/app/input -v ${PWD}/output:/app/output --network none pdf-extractor:v1
@@ -78,6 +88,9 @@ Run (On Linux / macOS):
 ```bash
 docker run --rm -v %cd%/input:/app/input -v %cd%/output:/app/output --network none pdf-extractor:v1
 ```
+### 6. Output
+After successful execution, you will find the generated JSON outline(s) in the /output folder, with filenames matching the original PDFs.
+
 ## Folder Structure
 ```bash
 Challenge_1A/
