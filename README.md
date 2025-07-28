@@ -11,11 +11,11 @@ Then, we apply statistical font analysis to detect headings and use multilingual
 ### Key Algorithms:
 1. Scan the /app/input directory for all .pdf files.
 2. For each PDF:
-- Use PyMuPDF to extract text blocks along with font size, style, and position.
+  - Use PyMuPDF to extract text blocks along with font size, style, and position.
 3. Normalize and analyze font sizes across the document to estimate heading thresholds.
 4. Detect headings using:
-- Font size/style (bold, large)
-- Multilingual regex patterns for numbered formats (e.g., “1.”, “1.1”, “Chapter 2”).
+  - Font size/style (bold, large)
+  - Multilingual regex patterns for numbered formats (e.g., “1.”, “1.1”, “Chapter 2”).
 5. Determine heading levels (H1, H2, H3) based on statistical and structural rules.
 6. Remove duplicates and refine the hierarchy for consistency.
 7. Output a JSON file per PDF with structured headings (text, level, page).
