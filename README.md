@@ -9,10 +9,16 @@ We use PyMuPDF to read PDF text along with style metadata (font sizes, positions
 Then, we apply statistical font analysis to detect headings and use multilingual regex patterns to recognize numbered sections and chapters.
 
 ### Key Algorithms:
-1. Font size statistics to identify headings
-2. Multilingual regex detection (English, Chinese, Japanese, Spanish, etc.)
-3. Font style & position heuristics
-4. Duplicate removal and outline optimization
+1. Scan the /app/input directory for all .pdf files.
+2. For each PDF:
+- Use PyMuPDF to extract text blocks along with font size, style, and position.
+3. Normalize and analyze font sizes across the document to estimate heading thresholds.
+4. Detect headings using:
+- Font size/style (bold, large)
+- Multilingual regex patterns for numbered formats (e.g., “1.”, “1.1”, “Chapter 2”).
+5. Determine heading levels (H1, H2, H3) based on statistical and structural rules.
+6. Remove duplicates and refine the hierarchy for consistency.
+7. Output a JSON file per PDF with structured headings (text, level, page).
 
 ## Libraries Used
 - **PyMuPDF** – PDF parsing with font/position info
