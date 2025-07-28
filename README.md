@@ -21,7 +21,7 @@ Then, we apply statistical font analysis to detect headings and use multilingual
 - **re** – Regex-based heading detection
 
 ## Input PDFs
-**IMPORTANT**
+### **IMPORTANT**
 Place all the PDFs you want to process inside the input/ folder in the root of this challenge folder.
 The system will automatically scan this folder and process every PDF present.
 Do not rename or change folder structure.
