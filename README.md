@@ -9,7 +9,7 @@ We use PyMuPDF to read PDF text along with style metadata (font sizes, positions
 Then, we apply statistical font analysis to detect headings and use multilingual regex patterns to recognize numbered sections and chapters.
 
 ### Key Algorithms:
-1.Font size statistics to identify headings
+1. Font size statistics to identify headings
 2. Multilingual regex detection (English, Chinese, Japanese, Spanish, etc.)
 3. Font style & position heuristics
 4. Duplicate removal and outline optimization
